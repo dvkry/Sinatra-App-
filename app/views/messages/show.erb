@@ -14,5 +14,14 @@
   <a href="http://<%= @message.url %>"><%= @message.url %></a>
 </p>
 
+<p>
+  Other posts from this author:
+  <% @other_messages_by_author.each do |post| %>
+    <li><%= post.content %></li>
+  <% end %> 
+
+</p>
+
+
 <hr/>
 <a href="/messages">Back to All Messages</a>
