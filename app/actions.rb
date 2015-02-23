@@ -15,6 +15,8 @@ end
 
 get '/messages/:id' do
   @message = Message.find(params[:id])
+  @other_messages_by_author = Message.where("author = ? AND id != ?", @message.author, params[:id])
+
   erb :'messages/show'
 end
 
